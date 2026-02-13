@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Be My Valentine 💕</title>
 
 <style>
@@ -14,33 +13,24 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #ff9a9e, #fecfef);
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     text-align: center;
-    overflow: hidden;
-}
-
-h1 {
-    color: white;
-    font-size: 2.5em;
 }
 
 img {
     width: 250px;
-    height: 250px;
-    object-fit: cover;
     border-radius: 20px;
-    margin: 20px 0;
+    margin: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 button {
     padding: 12px 25px;
     font-size: 18px;
-    border: none;
     border-radius: 30px;
+    border: none;
     margin: 10px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 #yesBtn {
@@ -48,64 +38,27 @@ button {
     color: white;
 }
 
-#yesBtn:hover {
-    transform: scale(1.1);
-}
-
 #noBtn {
+    position: absolute;
     background: white;
     color: #ff4b5c;
-    position: absolute;
-}
-
-input[type="file"] {
-    margin-top: 10px;
-}
-
-.success {
-    font-size: 3em;
-    animation: pop 0.5s ease forwards;
-}
-
-@keyframes pop {
-    0% { transform: scale(0); }
-    100% { transform: scale(1); }
 }
 </style>
 </head>
 
 <body>
 
-<h1>Will you be my Valentine? 💖</h1>
+<h1>Will you be my Valentine??? 💖</h1>
+<h1>Please say yes my Mhoonoiii</h1>
+<img src="image.jpg">
 
-<img id="preview" src="https://via.placeholder.com/250" alt="Your photo here">
-
-<input type="file" id="imageUpload" accept="image/*">
-
-<div>
-    <button id="yesBtn">Yes 💕</button>
-    <button id="noBtn">No 😢</button>
-</div>
+<button id="yesBtn">Yes 💕</button>
+<button id="noBtn">No 😢</button>
 
 <script>
-const upload = document.getElementById("imageUpload");
-const preview = document.getElementById("preview");
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 
-// แสดงรูปที่เลือก
-upload.addEventListener("change", function() {
-    const file = this.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            preview.src = e.target.result;
-        }
-        reader.readAsDataURL(file);
-    }
-});
-
-// ปุ่ม No วิ่งหนี
 noBtn.addEventListener("mouseover", function() {
     const x = Math.random() * (window.innerWidth - 100);
     const y = Math.random() * (window.innerHeight - 100);
@@ -113,11 +66,10 @@ noBtn.addEventListener("mouseover", function() {
     noBtn.style.top = y + "px";
 });
 
-// กด Yes แล้วขึ้นข้อความ
 yesBtn.addEventListener("click", function() {
     document.body.innerHTML = `
-        <div class="success">💖</div>
-        <h1>Yay!!! You are my Valentine! 💕</h1>
+        <h1>Yay!!! Mhoonoi is my Valentine now!!!!💕</h1>
+        <h2>Can't wait to see you ❤️</h2>
     `;
 });
 </script>
